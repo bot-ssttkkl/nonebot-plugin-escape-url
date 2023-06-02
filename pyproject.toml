@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "nonebot-plugin-escape-url"
-version = "0.1.2.post1"
+version = "0.1.2.post2"
 description = ""
 authors = ["ssttkkl <huang.wen.long@hotmail.com>"]
 readme = "README.md"
@@ -8,7 +8,7 @@ packages = [{ include = "nonebot_plugin_escape_url" }]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-nonebot2 = "^2.0.0rc4"
+nonebot2 = "^2.0.0"
 
 [tool.poetry.group.dev.dependencies]
 nonebot2 = { extras = ["httpx"], version = "^2.0.0rc4" }
