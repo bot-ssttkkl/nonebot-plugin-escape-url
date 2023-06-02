@@ -3,7 +3,7 @@ from io import StringIO
 
 # reg_url = re.compile(
 #     r"(https?://(?:www\.)?[-a-zA-Z\d@:%._+~#=]{1,256}\.[a-zA-Z\d()]{1,6}\b[-a-zA-Z\d()@:%_+.~#?&/=]*)")
-reg_url = re.compile(r"([-a-zA-Z\d]+\.)+[-a-zA-Z\d]+")
+reg_url = re.compile(r"((?=.*[a-z])[-A-Za-z\d]+\.)+((?=.*[a-z])[-A-Za-z\d]+)")
 
 
 def escape_url(url: str, replace_dot_by: str = '🤔') -> str:
