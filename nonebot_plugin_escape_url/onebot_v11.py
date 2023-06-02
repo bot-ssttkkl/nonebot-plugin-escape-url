@@ -1,5 +1,7 @@
 from nonebot.typing import overrides
 
+from .config import conf
+
 try:
     from typing import Any, Union
 
@@ -10,17 +12,18 @@ try:
 
     _origin_call_api = Bot.call_api
 
+
     @overrides(BaseBot)
     async def call_api(self, api: str, **data: Any) -> Any:
         if api == 'send_msg':
             message = data.get("message", None)
 
             if isinstance(message, str):
-                message = escape_text(message)
+                message = escape_text(message, conf.escape_url_replace_dot_by)
             elif isinstance(message, Message):
                 for seg in message:
                     if seg.type == 'text':
-                        seg.data['text'] = escape_text(seg.data['text'])
+                        seg.data['text'] = escape_text(seg.data['text'], conf.escape_url_replace_dot_by)
 
             logger.trace(f"escaped message: {message}")
             data['message'] = message

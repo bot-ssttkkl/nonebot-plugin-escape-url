@@ -1,3 +1,5 @@
+from .config import conf
+
 try:
     from functools import wraps
 
@@ -12,7 +14,7 @@ try:
         async def wrapper(*args, **kwargs):
             content = kwargs.get("content", None)
             if content is not None:
-                content = escape_text(content)
+                content = escape_text(content, conf.escape_url_replace_dot_by)
                 logger.trace(f"escaped content: {content}")
                 kwargs["content"] = content
 
