@@ -14,3 +14,21 @@ nonebot-plugin-escape-url
 使用后：
 
 ![使用后](img/2.png)
+
+## 配置项
+
+### escape_url_replace_dot_by
+
+将URL中的点替换为
+
+类型：`str`
+
+默认值：`"。"`
+
+### escape_url_ignore_adapters
+
+不进行转换的适配器
+
+类型：`List[str]`
+
+默认值：`[]`
