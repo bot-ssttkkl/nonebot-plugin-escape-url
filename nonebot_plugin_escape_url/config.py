@@ -1,10 +1,10 @@
 from typing import List
 
-from nonebot import get_driver
-from pydantic import BaseSettings
+from nonebot import get_plugin_config
+from pydantic import BaseModel
 
 
-class Config(BaseSettings):
+class Config(BaseModel):
     escape_url_replace_dot_by: str = '。'
     escape_url_ignore_adapters: List[str] = []
 
@@ -12,4 +12,4 @@ class Config(BaseSettings):
         extra = "ignore"
 
 
-conf = Config(**get_driver().config.dict())
+conf = get_plugin_config(Config)

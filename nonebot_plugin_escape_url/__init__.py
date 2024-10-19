@@ -9,8 +9,7 @@ __plugin_meta__ = PluginMetadata(
     type="application",
     homepage="https://github.com/bot-ssttkkl/nonebot-plugin-escape-url",
     config=Config,
-    supported_adapters={"~onebot.v11", "~qqguild"}
+    supported_adapters={"~onebot.v11"}
 )
 
 from . import onebot_v11
-from . import qqguild
