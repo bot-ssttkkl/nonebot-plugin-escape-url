@@ -13,3 +13,4 @@ __plugin_meta__ = PluginMetadata(
 )
 
 from . import onebot_v11
+from . import qq

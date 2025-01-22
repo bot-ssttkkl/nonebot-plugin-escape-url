@@ -6,12 +6,12 @@ from io import StringIO
 reg_url = re.compile(r"((?=.*[a-z])[-A-Za-z\d]+\.)+((?=.*[a-z])[-A-Za-z\d]+)")
 
 
-def escape_url(url: str, replace_dot_by: str = '🤔') -> str:
+def escape_url(url: str, replace_dot_by: str = '。') -> str:
     seg = url.split('.')
     return replace_dot_by.join(seg)
 
 
-def escape_text(text: str, replace_dot_by: str = '🤔') -> str:
+def escape_text(text: str, replace_dot_by: str = '。') -> str:
     text = text.replace("http://", '')
     text = text.replace("https://", '')
     with StringIO() as sio:
