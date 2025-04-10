@@ -1,24 +1,33 @@
-[tool.poetry]
+[tool.pdm]
+distribution = true
+
+[tool.pdm.build]
+includes = ["nonebot_plugin_escape_url"]
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[project]
 name = "nonebot-plugin-escape-url"
 version = "0.1.5.post.1"
 description = ""
-authors = ["ssttkkl <huang.wen.long@hotmail.com>"]
+authors = [
+    {name = "ssttkkl", email = "huang.wen.long@hotmail.com"},
+]
+dependencies = [
+    "nonebot2<3.0,>=2.0",
+]
+requires-python = "<4.0,>=3.9"
 readme = "README.md"
-packages = [{ include = "nonebot_plugin_escape_url" }]
+license = {text = "MIT"}
 
-[tool.poetry.dependencies]
-python = "^3.9"
-nonebot2 = "^2.0"
 
-[tool.poetry.group.dev.dependencies]
-nonebot2 = {extras = ["fastapi"], version = "^2.3.3"}
-nonebot-adapter-onebot = "^2.2.2"
-pytest = "^8.3.3"
-nonebug = "^0.3.7"
-pytest-asyncio = "^0.24.0"
-nonebot-plugin-send-anything-anywhere = "^0.7.1"
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
-
+[dependency-groups]
+dev = [
+    "nonebot2[fastapi]<3.0.0,>=2.3.3",
+    "nonebot-adapter-onebot<3.0.0,>=2.2.2",
+    "pytest<9.0.0,>=8.3.3",
+    "nonebug<1.0.0,>=0.3.7",
+    "pytest-asyncio<1.0.0,>=0.24.0",
+    "nonebot-plugin-send-anything-anywhere<1.0.0,>=0.7.1",
+]
